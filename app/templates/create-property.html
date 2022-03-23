@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1 class="fw-bold">Add New Property</h1>
+
+    <div class="p-5 container-md bg-white">
+        <form action="/properties/create" method="POST" enctype="multipart/form-data" class="row mb-3" id="createPropertiesForm">
+            {{ form.csrf_token }}
+            <div class="col-md-12 mb-3">
+                {{ form.title.label(class="form-label fw-bold") }}
+                {{ form.title(class="form-control") }}
+            </div>
+            <div class="col-md-12 mb-3">
+                {{ form.description.label(class="form-label fw-bold") }}
+                {{ form.description(class="form-control") }}
+            </div>
+
+                <div class="col-md-6">
+                    {{ form.number_of_bedrooms.label(class="form-label fw-bold") }}
+                    {{ form.number_of_bedrooms(class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.number_of_bathrooms.label(class="form-label fw-bold") }}
+                    {{ form.number_of_bathrooms(class="form-control") }}
+                </div>
+            
+                <div class="col-md-6">
+                    {{ form.price.label(class="form-label fw-bold") }}
+                    {{ form.price(class="form-control") }}
+                </div>
+                <div class="col-md-6">
+                    {{ form.property_type.label(class="form-label fw-bold") }}
+                    {{ form.property_type(class="form-control") }}
+                </div>
+            
+            <div class="col-md-6 mb-3">
+                {{ form.location.label(class="form-label fw-bold") }}
+                {{ form.location(class="form-control") }}
+            </div>
+
+            <div class="col-md-12 mb-3">
+                {{ form.photo.label(class="form-label fw-bold") }}
+                {{ form.photo(class="form-control") }}
+            </div>
+        
+            
+        </form>
+        <button class="btn btn-primary px-4" type="submit" form="createPropertiesForm">Add Property</button>
+    </div>
+{% endblock %}
