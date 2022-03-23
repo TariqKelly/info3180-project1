@@ -2,25 +2,27 @@
 
 {% block main %}
 
-<div class="container px-5">
+<div class="container px-5 d-flex justify-content-center">
     <div class="card mb-3 h-100" style="max-width: 720px; height: auto;margin-bottom: 0% !important ">
         <div class="row g-0">
-          <div class="col-md-2">
+          <div class="col-md-6">
             <img src="{{ url_for('get_uploaded_file', filename = property.photo) }}" class="img-fluid rounded-start" alt="..." >
           </div>
-          <div class="col-md-4">
-            <div class="card-body">
-              <h5 class="card-title">{{ property.title }}</h5>
-              <button class=" col-md-auto btn btn-default btn-sm rounded-pill disabled" style="background-color:#0d6efd;color:white;"> {{ "${:,.2f}".format(property.price) }} </button>
-              <button class=" col-md-auto btn btn-warning btn-sm rounded-pill text-white disabled"> {{ property.property_type }} </button>
+          <div class="col-md-6">
+            <div class="card-body p-4">
+              <h5 class="card-title my-3">{{ property.title }}</h5>
+              <div class="my-3">
+                <button class=" col-md-auto btn btn-default btn-sm rounded-pill disabled" style="background-color:#0d6efd;color:white;"> {{ "${:,.2f}".format(property.price) }} </button>
+                <button class=" col-md-auto btn btn-warning btn-sm rounded-pill text-white disabled"> {{ property.property_type }} </button>
+              </div>
               <p class="card-text">{{ property.description }}</p>
 
               <div class="row">
-                  <p class="card-text col">{{ property.number_of_bedrooms }} Bedrooms</p>
-                  <p class="card-text col">{{ property.number_of_bathrooms }} Bathrooms</p>
+                  <p class="card-text col"><i class="fa-solid fa-bed"></i> {{ property.number_of_bedrooms }} Bedrooms</p>
+                  <p class="card-text col"><i class="fa-solid fa-sink"></i> {{ property.number_of_bathrooms }} Bathrooms</p>
               </div>
     
-              <p class="card-text">{{ property.location }}</p>
+              <p class="card-text"> <i class="fa-solid fa-location-dot"></i> {{ property.location }}</p>
     
     
               <button class="btn btn-primary">Email Realtor</button>

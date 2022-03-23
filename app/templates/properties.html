@@ -9,7 +9,7 @@
                 <img src="{{ url_for('get_uploaded_file', filename = property.photo) }}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title mb-0">{{ property.title }}</h5>
-                  <p class="card-text"> <small class="text-muted"> {{ property.location }}</small> </small> </p>
+                  <p class="card-text"> <small class="text-muted"><i class="fa-solid fa-location-dot"></i> {{ property.location }}</small> </small> </p>
 
                   <button class=" col-md-auto btn btn-default btn-sm rounded-pill disabled" style="background-color:#0d6efd;color:white;"> {{ "${:,.2f}".format(property.price) }} </button>
 
