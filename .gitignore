@@ -22,5 +22,5 @@ node_modules
 # SCSS
 .sass-cache
 
-.env
+#.env
 .flaskenv
